@@ -1,6 +1,6 @@
 # Book API
 
-**This project is the resolution of a technical assessment.**  
+**This project is the resolution of a technical assessment**  
 
 ### Challenge  
 
@@ -23,10 +23,6 @@ Copy the example env file
 Generate a new application key  
 
     php artisan key:generate  
-
-Generate a new JWT auth key  
-
-    php artisan jwt:secret  
 
 Create an empty database and put the access credentials in .env  
 
