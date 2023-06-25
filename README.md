@@ -40,5 +40,7 @@ Run the server locally
 
 You can now access the server at http://localhost:8000  
 
+There are example requests in the `collection.postman_collection` file
+
 ## License  
 [MIT](https://choosealicense.com/licenses/mit/)  
