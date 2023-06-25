@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class BookController extends Controller
 {
@@ -14,17 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Book::all();
     }
 
     /**
@@ -35,7 +26,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        return Book::create($request->all());
     }
 
     /**
@@ -46,18 +41,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Book $book)
-    {
-        //
+        return $book;
     }
 
     /**
@@ -69,7 +53,9 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $book->update($request->all());
+
+        return $book;
     }
 
     /**
@@ -80,6 +66,6 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        return Book::destroy($book->id);
     }
 }
