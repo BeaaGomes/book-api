@@ -26,11 +26,13 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required'
+        $fields = $request->validate([
+            'name' => 'required|string',
+            'isbn' => 'numeric',
+            'value' => 'numeric'
         ]);
 
-        return Book::create($request->all());
+        return Book::create($fields);
     }
 
     /**
