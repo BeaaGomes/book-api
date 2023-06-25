@@ -4,7 +4,7 @@
 
 ### Challenge  
 
-Create an book CRUD API with authentication   
+Create a book CRUD API with authentication   
 
 ## Setup  
 
